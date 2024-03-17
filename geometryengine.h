@@ -4,27 +4,25 @@
 #ifndef GEOMETRYENGINE_H
 #define GEOMETRYENGINE_H
 
-#include <QOpenGLFunctions_4_5_Compatibility> //max supported by 930MX
-//#include <QOpenGLExtraFunctions>
+#include <QOpenGLFunctions_4_5_Core> //max supported by 930MX
 #include <QOpenGLShaderProgram>
 #include <QOpenGLBuffer>
 
-#include <QOpenGLExtraFunctions>
 
-class GeometryEngine : protected QOpenGLFunctions_4_5_Compatibility
+class GeometryEngine : protected QOpenGLFunctions_4_5_Core
 {
 public:
     GeometryEngine();
     virtual ~GeometryEngine();
 
-    void drawCubeGeometry(QOpenGLShaderProgram *program);
-
-private:
+    void drawCubeGeometry(QOpenGLShaderProgram *program, int NumberOfDraws);
     void initCubeGeometry();
-    void initCubeLocations();
+private:
+
     QOpenGLBuffer arrayBuf;
     QOpenGLBuffer indexBuf;
-    QOpenGLBuffer locationBuf;
+    //QOpenGLBuffer locationBuf; //positions of cubes
+    //QOpenGLBuffer typeBuf; //types of cubes
 
 
 };

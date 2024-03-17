@@ -18,5 +18,5 @@ RESOURCES += \
     textures.qrc
 
 # install
-target.path = $$[QT_INSTALL_EXAMPLES]/opengl/cube
+target.path = $$[HOME]/opengl/cube
 INSTALLS += target

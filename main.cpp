@@ -4,7 +4,7 @@
 #include <QApplication>
 #include <QLabel>
 #include <QSurfaceFormat>
-#include <QOpenGLFunctions_4_5_Core> //max supported by 930MX
+#include <QOpenGLFunctions_4_3_Core> //4.5 supported by 930MX
 
 #ifndef QT_NO_OPENGL
 #include "mainwidget.h"
@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 
     QSurfaceFormat format;
     format.setDepthBufferSize(24);
-        format.setVersion(4,5);
+        format.setVersion(4,3);
     QSurfaceFormat::setDefaultFormat(format);
     qDebug() <<format.majorVersion() <<"." <<format.minorVersion();
     app.setApplicationName("cube");
@@ -25,7 +25,9 @@ int main(int argc, char *argv[])
 
 
     MainWidget widget;
-    widget.show();
+    widget.showMaximized();
+    //widget.showFullScreen();
+    //widget.show();
 #else
     QLabel note("OpenGL Support required");
     note.show();
