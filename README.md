@@ -1,7 +1,7 @@
 # Cubes
 QT OpenGl Instanced cubes
 
-This is the QT opengl example cube, upgraded to opengl4.5, to allow instancing of cubes.
+This is the QT opengl example cube, upgraded to opengl4.3, to allow instancing of cubes.
 
 Cubes are drawn using instancing from SSBO buffer.
 
